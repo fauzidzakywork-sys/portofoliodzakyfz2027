@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Dzaky — Portofolio</title><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&display=swap" rel="stylesheet"><style id="css">
+:root{--bg:#fff;--ink:#111;--or:#ff3a14;--soft:#111;--line:#111;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 'Inter Tight',Helvetica,Arial,sans-serif}
+a{color:inherit}
+.big{font-weight:800;letter-spacing:-.05em;line-height:.88;text-transform:uppercase}
+.small{font-size:11px;font-weight:500;letter-spacing:.02em;text-transform:uppercase;line-height:1.25}
+.wrap{padding:0 4vw}
+header{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 4vw;position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+header nav{display:flex;gap:18px}
+header a{text-decoration:none}header a:hover{color:var(--or)}
+.lang button{font:500 11px 'Inter Tight',sans-serif;text-transform:uppercase;background:none;color:var(--ink);border:1px solid var(--line);padding:4px 10px;cursor:pointer}
+.lang button+button{border-left:0}
+.lang button[aria-pressed="true"]{background:var(--or);color:var(--ink)}
+.hero{background:var(--or);padding:5vh 4vw 3vh;min-height:80vh;display:flex;flex-direction:column;justify-content:space-between}
+.hero h1{font-size:clamp(5rem,29vw,25rem);margin:0;color:var(--ink);letter-spacing:-.06em}
+.hero .row{order:-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:0 0 6vh;border-top:1px solid var(--line);padding-top:14px}
+.hero p{margin:0;max-width:520px;font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;letter-spacing:-.02em;line-height:1.25}
+.sec{border-top:1px solid var(--line);padding:30px 4vw 56px}
+.sechead{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:26px}
+.sechead h2{font-size:clamp(2.4rem,8vw,6.5rem);margin:0;color:var(--ink)}
+.sechead h2 i{font-style:normal}
+.sechead .small{max-width:200px;text-align:right}
+.list{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:end;padding:10px 0 8px;border-bottom:1px solid var(--line);color:var(--ink)}
+.item b{font-size:clamp(1.5rem,5vw,3.4rem)}
+.count{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.count b{font-size:clamp(6rem,26vw,19rem);color:var(--or);background:linear-gradient(transparent 62%,rgba(255,58,20,.16) 62%,rgba(255,58,20,.16) 94%,transparent 94%);padding-right:.08em}
+.sec.org{background:var(--or)}
+.sec.org .count b{color:var(--ink);background:linear-gradient(transparent 62%,rgba(255,255,255,.55) 62%,rgba(255,255,255,.55) 94%,transparent 94%)}
+.count .small{padding-bottom:1.2vw;max-width:220px}
+.ctrl{display:flex;gap:8px;margin-bottom:12px;justify-content:flex-end}
+.ctrl button{font:500 13px 'Inter Tight',sans-serif;width:44px;height:36px;background:none;color:var(--ink);border:1px solid var(--line);cursor:pointer}
+.ctrl button:hover{background:var(--ink);color:#fff}
+.car{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.slide{flex:0 0 min(320px,78vw);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;min-height:260px}
+.slide .tag{display:inline-block;align-self:flex-start;border:1px solid var(--ink);color:var(--ink);padding:2px 8px;margin-bottom:auto}
+.slide h3{font-size:1.9rem;margin:40px 0 12px;font-weight:800;letter-spacing:-.04em;line-height:.95;text-transform:uppercase}
+.slide .plat{border-top:1px solid var(--line);padding-top:8px;margin-bottom:6px;color:var(--soft)}
+.slide a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--or)}
+.slide a:hover{color:var(--or)}
+footer{border-top:1px solid var(--line);padding:26px 4vw 48px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+footer ul{list-style:none;margin:0;padding:0}
+footer a{text-decoration:none}footer a:hover{color:var(--or)}
+footer .logo{font-size:clamp(2.2rem,6vw,4rem)}
+@media(max-width:720px){
+ header nav{display:none}
+ .hero .row,footer{grid-template-columns:1fr}
+ .item{grid-template-columns:1fr}
+ .sechead{grid-template-columns:1fr}.sechead .small{text-align:left}
+}
+
+#ed-open{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;font:500 13px 'Inter Tight',sans-serif;background:#111;color:#fff;border:0;padding:10px 16px;cursor:pointer}
+#ed{position:fixed;inset:0;background:#fff;color:#111;overflow:auto;z-index:50;padding:calc(20px + env(safe-area-inset-top,0px)) 4vw 90px}
+#ed h3{font:800 2rem 'Inter Tight',sans-serif;letter-spacing:-.04em;text-transform:uppercase;margin:0 0 16px}
+#ed h4{font:800 1.1rem 'Inter Tight',sans-serif;text-transform:uppercase;margin:26px 0 8px;border-top:1px solid #111;padding-top:10px}
+#ed input,#ed textarea{font:400 14px 'Inter Tight',sans-serif;border:1px solid #111;background:#fff;color:#111;padding:6px 8px;width:100%;min-width:0}
+#ed .ed-row{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;margin-bottom:6px;align-items:start}
+#ed .ed-row button{grid-column:auto;width:36px}
+#ed button{font:500 13px 'Inter Tight',sans-serif;background:#fff;color:#111;border:1px solid #111;padding:6px 12px;cursor:pointer}
+#ed .ed-bar{position:fixed;left:0;right:0;bottom:0;background:#ff3a14;padding:12px 4vw calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center}
+@media(max-width:720px){#ed .ed-row{grid-auto-flow:row}#ed .ed-row button{width:auto}}
+.cats{margin:0 0 28px;border-top:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:1.2fr 1fr .8fr 2fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);align-items:end}
+.crow b{font-weight:800;font-size:clamp(1.2rem,3vw,2rem);line-height:1;letter-spacing:-.04em;text-transform:uppercase}
+.crow .cn{font-weight:800;font-size:clamp(1.4rem,3.4vw,2.4rem);line-height:1;letter-spacing:-.04em}
+.crow a{text-decoration:none;border-bottom:1px solid var(--or)}
+.chead{padding:8px 0}.chead span{font-size:11px;font-weight:500;text-transform:uppercase}
+@media(max-width:720px){.crow{grid-template-columns:1fr 1fr}.chead{display:none}}
+.ovtext{font-weight:500;font-size:clamp(1.4rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-.03em;max-width:900px;margin:0 0 34px}
+.ovlist a{text-decoration:none}.ovlist a:hover b{color:var(--or)}
+.lk{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}header,#ed-open,#ed,.ctrl{display:none!important}.car{display:grid!important;grid-template-columns:repeat(3,1fr);overflow:visible!important;gap:10px}.slide{flex:none;min-height:0;break-inside:avoid}.hero{min-height:60vh}.sec,.hero,.crow,.item{break-inside:avoid}}
+.crow.c3{grid-template-columns:1.2fr 1.2fr .8fr}@media(max-width:720px){.crow.c3{grid-template-columns:1fr 1fr .6fr}}
+</style></head><body><div id="shell">
+<header class="small">
+ <span>Portofolio Dzaky</span>
+ <nav><a href="#overview">(2) <span data-i18n="n5"></span></a><a href="#tulis">(3) <span data-i18n="n3"></span></a><a href="#liputan">(4) <span data-i18n="n4"></span></a></nav>
+ <div class="lang" role="group" aria-label="Language / Bahasa"><button data-lang="id" aria-pressed="true">ID</button><button data-lang="en" aria-pressed="false">EN</button></div>
+</header>
+
+<section class="hero" id="perkenalan">
+ <h1 class="big">Dzaky</h1>
+ <div class="row">
+  <div class="small">(1) <span data-i18n="n1"></span><br>Yogyakarta, ID</div>
+  <p data-i18n="bio"></p>
+ </div>
+</section>
+
+<section class="sec" id="overview">
+ <div class="sechead"><h2 class="big"><i>(2)</i> <span data-i18n="n5"></span></h2><div class="small" data-i18n="o_note"></div></div>
+ <p class="ovtext" id="ovtext"></p>
+ <div class="list ovlist" id="ovlist"></div>
+</section>
+
+<section class="sec org" id="tulis">
+ <div class="sechead"><h2 class="big"><i>(3)</i> <span data-i18n="n3"></span></h2><div class="small" data-i18n="w_note"></div></div>
+ <div class="count"><b class="big" id="n-w">00</b><div class="small" data-i18n="w_count"></div></div>
+ <div class="cats" id="cats-w"></div>
+</section>
+
+<section class="sec" id="liputan">
+ <div class="sechead"><h2 class="big"><i>(4)</i> <span data-i18n="n4"></span></h2><div class="small" data-i18n="r_note"></div></div>
+ <div class="count"><b class="big" id="n-r">00</b><div class="small" data-i18n="r_count"></div></div>
+ <div class="cats" id="cats-r"></div>
+ <div class="ctrl"><button data-c="c-r" data-d="-1" aria-label="Prev">←</button><button data-c="c-r" data-d="1" aria-label="Next">→</button></div>
+ <div class="car" id="c-r"></div>
+</section>
+
+<footer class="small">
+ <div class="logo big">Dzaky</div>
+ <ul id="ct1"></ul>
+ <ul id="ct2"></ul>
+</footer>
+</div><script type="application/json" id="data">{"counts":{"w":"127","r":"43"},"bio":{"id":"Lulusan Hubungan Internasional UPN \"Veteran\" Yogyakarta yang tertarik pada dunia jurnalistik. Saat ini aktif mendalami pemodelan data dan simulasi sistem.","en":"A graduate of the International Relations program at UPN “Veteran” Yogyakarta who is interested in journalism. He is currently actively studying data modeling and system simulation."},"contacts":[{"label":"WhatsApp","url":"wa.me/+62895359690614"},{"label":"Email","url":"mailto:fauzidzaky.work@gmail.com"},{"label":"Linkedin","url":"https://www.linkedin.com/in/muhammad-dzaky-fauzi/"}],"reports":[{"title":"BNG Showcase #1","category":"Advertorial","link":"https://www.instagram.com/reel/DbVix23BY12/?psln=N2MyNDZpa2hnYnJs"},{"title":"BNG Showcase #2","category":"Advertorial","link":"https://www.instagram.com/reel/DbW_gfVB8Pf/?obrf=YWJpZDljcG1mM3hl"},{"title":"Yamaha #1","category":"Advertorial ","link":"https://www.instagram.com/reel/DYwYaJ5zESI/?srtk=MXZjMWc5YmlxMW9hMQ%3D%3D"},{"title":"Yamaha #2","category":"Advertorial","link":"https://www.instagram.com/reel/DZpNRICTInb/?dlrf=eDdhNzkxOXd3aHIy"},{"title":"Yamaha #3","category":"Advertorial","link":"https://www.instagram.com/reel/DZmcfJjzdl6/?rpxt=enk1b2M4OTc5NTdw"},{"title":"Yamaha #4","category":"Advertorial","link":"https://www.instagram.com/reel/DYwYaJ5zESI/?srtk=MXZjMWc5YmlxMW9hMQ=="},{"title":"Inacraft","category":"Advertorial","link":"https://www.instagram.com/reel/DZ4ATO_TTzB/?dlrf=ZTdsY2xqdnVxNWM0"},{"title":"Palm Oil Career Expo (POCE) ","category":"Advertorial","link":"https://www.instagram.com/reel/DZXPeygTJ92/?srtk=MTZ3cXhrc3ViaGg4eQ=="},{"title":"Waisak #1","category":"Advertorial","link":"https://www.instagram.com/reel/DY6kkeRzVK7/?rpxt=cTQwOGI2MTljMnB6"},{"title":"Waisak #2","category":"Advertorial","link":"https://www.instagram.com/reel/DZBg4_ATDn6/?vrfl=N3hlZDF1aW94c210"},{"title":"Waisak #3","category":"Advertorial","link":"https://www.instagram.com/reel/DY_2SUEzrlv/?srtk=NmpoYmF6YTF5bzVn"},{"title":"Sinau Ria","category":"Advertorial","link":"https://www.instagram.com/reel/DaCTnc7z69B/?xtok=bHpoOXppcmVoY2pn"},{"title":"Antena","category":"Redaksional","link":"https://www.instagram.com/reel/DalvvfiSmDf/?psln=NG40bms1Mm9uNGt1"},{"title":"Insight - Liburan","category":"Redaksional","link":"https://www.instagram.com/reel/Da_fsICBDKW/?exln=dGt2NGp3M25jeTA2"},{"title":"Insight - Bimbingan Belajar","category":"Redaksional","link":"https://www.instagram.com/p/Dac0bUqE6JP/?srtk=dWZkbXpyZWp2cjhu"},{"title":"Indonesia UFO Festival (IUF)","category":"Redaksional","link":"https://www.instagram.com/p/DamVg8PE10d/?srtk=MW1zanJtMnM2YmFpNQ%3D%3D"},{"title":"Festival 0,","category":"Redaksional","link":"https://www.instagram.com/reel/Dau512DTlys/?rpxt=MWdiN20xaXJuaDh2eA%3D%3D"},{"title":"Jakal Tampil","category":"Redaksional","link":"https://www.instagram.com/p/Dawos15k0hs/?obrf=a3dnY25lcHcwendz"},{"title":"Viknes","category":"Redaksional","link":"https://www.instagram.com/reel/Dad9_7uy7ut/?obrf=MW92aWFsN2ttMTJlMw%3D%3D"},{"title":"Alm. Nasirun","category":"Redaksional","link":"https://www.instagram.com/reel/Dbzo23chC95/?obrf=MXQ2NjNoaTlmMzU2bQ%3D%3D"},{"title":"Aksi Camping UPN","category":"Redaksional","link":"https://www.instagram.com/reel/DYwLjHIzktQ/?exln=MWtqeWswZzYxamIwcg%3D%3D"},{"title":"Tahura Bunder #1","category":"Redaksional","link":"https://www.instagram.com/reel/DcF-qB5TNjN/?exln=bWNyanp0OXhrYXB1"},{"title":"Tahura Bunder #2","category":"Redaksional","link":"https://www.instagram.com/reel/DcFBPkhhURS/?rpxt=Y3F5amhsbzhqeTF6"},{"title":"Tren Kopi #1","category":"Redaksional","link":"https://www.instagram.com/reel/Dbwa2mgB9B_/?exln=bGFsNXNyOTN2MGs1"},{"title":"Tren Kopi #2","category":"Redaksional","link":"https://www.instagram.com/reel/DbxEAn3B7Au/?rpxt=bmd3NWcxN2hmNDhq"},{"title":"Tren Kopi #3","category":"Redaksional","link":"https://www.instagram.com/p/DbxthJbE-ul/?psln=MXdhODEzdzVtZmxxcg%3D%3D"},{"title":"Jogja Coffee Week #6","category":"Redaksional","link":"https://www.instagram.com/p/DaknBlJzgus/?rpxt=MTV5NTdqZzY4b3Nmcg%3D%3D"},{"title":"Melbourne Symphony Orchestra (MSO) #1","category":"Redaksional","link":"https://www.instagram.com/p/Da0X4zik0I5/?mdxt=cGlvaXJocjJpYmI%3D&img_index=1"},{"title":"Melbourne Symphony Orchestra (MSO) #2","category":"Redaksional ","link":"https://www.instagram.com/reel/Da3JM4vzEXf/?cplk=MXduajY2cnp5Y3E5"},{"title":"Melbourne Symphony Orchestra (MSO) #3","category":"Redaksional","link":"https://www.instagram.com/reel/Da9xktHz-Ob/?srtk=dmFoYjV1MjgzYTg3"},{"title":"Melbourne Symphony Orchestra (MSO) #4","category":"Redaksional","link":"https://www.instagram.com/reel/Da680NHznrE/?xtok=YmZ2Mnp2MWxmZnp3"},{"title":"Melbourne Symphony Orchestra (MSO) #5","category":"Redaksional","link":"https://www.instagram.com/reel/Da26_SCTClg/?srtk=dHpsM2wwOTV6ZHFu"},{"title":"Melbourne Symphony Orchestra (MSO) #6","category":"Redaksional","link":"https://www.instagram.com/reel/Da2IoSSz2fO/?xtok=aWkwdXN2cThnYnJu"},{"title":"Insight - Orkestra #1","category":"Redaksional","link":"https://www.instagram.com/reel/Dbb0ievS0cS/?exln=b3ZpYzQ0dnd0Z25k"},{"title":"Insight - Orkestra #2","category":"Redaksional","link":"https://www.instagram.com/reel/DbdHIDWTofK/?mdxt=MXJjNHUyazB1aGpkZg%3D%3D"},{"title":"Insight - Orkestra #3","category":"Redaksional","link":"https://www.instagram.com/reel/DbcaNxWSaXL/?obrf=dGZqNDM1Y2ZhZ2c%3D"},{"title":"PlayOn","category":"Redaksional","link":"https://www.instagram.com/reel/DaH-YnhhJJY/?vrfl=cXVzc2h6Nm80OTgz"},{"title":"Tapa Pepe","category":"Redaksional","link":"https://www.instagram.com/reel/DZ438S_TucT/?vrfl=MWF0eTEzNTYyeDByaw%3D%3D"},{"title":"Demo Forum BEM DIY","category":"Redaksional","link":"https://www.instagram.com/reel/DZxOlANTLt1/?xtok=MTJ3YWxzMzFseGV3ZA%3D%3D"},{"title":"Pameran Mata Hati Soekarno #1","category":"Redaksional","link":"https://www.instagram.com/reel/DZU5ihYJkRy/?exln=d2Jvb3pkMjl4Njd3"},{"title":"Pameran Mata Hati Soekarno #2","category":"Redaksional","link":"https://www.instagram.com/reel/DZe1gg1JkgM/?psln=ZzQ1bjVtMnV0aDI1"},{"title":"Pameran Mata Hati Soekarno #3","category":"Redaksional","link":"https://www.instagram.com/reel/DZhHi4Spz-s/?vrfl=czFqeG41MzI5azJr"},{"title":"Jam Malam","category":"Redaksional","link":"https://www.instagram.com/reel/DcK08rvT36A/?obrf=MWFld3ZmN2s2ZWxpbA=="}],"wcats":[{"platform":"Medium","count":"55","note":"Cerita Pendek","links":[{"label":"","url":"https://medium.com/@s.ameeady"}]},{"platform":"Instagram","count":"56","note":"Ulasan Buku","links":[{"label":"","url":"https://www.instagram.com/s.ameeady/"}]},{"platform":"Wix","count":"1","note":"Artikel Bulletin","links":[{"label":"","url":"https://koinupn.wixsite.com/home/post/bulletin-vol-23"}]},{"platform":"Kompasiana","count":"9","note":"Esai Bebas ","links":[{"label":"","url":"https://www.kompasiana.com/dzakyfauzi2196?lgn_method=google&google_btn=onetap"}]},{"platform":"Bunga Rampai","count":"1","note":"Esai Akademik","links":[{"label":"","url":"http://eprints.upnyk.ac.id/43238/1/01%20-%20Organisasi%20Internasional%20di%20Dunia%20yang%20Berubah%20%281%29.pdf"}]},{"platform":"Omong-Omong","count":"1","note":"Opini","links":[{"label":"","url":"https://omong-omong.com/bebas-aktif-ala-prabowo/"}]},{"platform":"BPPM Kliring","count":"2","note":"Opini","links":[{"label":"","url":"https://www.bppmkliring.com/2026/05/menyoal-km-upn-dan-anonimitas-akun.html"},{"label":"","url":"https://www.bppmkliring.com/2026/07/membaca-ulang-upn-dan-cetak-biru-bela.html"}]},{"platform":"Jemput Suara","count":"2","note":"Opini","links":[{"label":"","url":"https://opini.jemputsuara.org/rupiah-melemah-bagaimana-respons-pemerintah/"},{"label":"","url":"https://opini.jemputsuara.org/pemuda-mengubah-kebijakan-lewat-suara/"}]}],"rcats":{"platform":"Instagram","adv":"12","red":"31"},"overview":{"id":"Portofolio ini berisi karya tulis dan hasil liputan dalam rentang tahun 2022-2026. Akan terus diperbarui secara berkala.","en":"This portfolio contains written works and reporting from 2022 to 2026. It will be updated periodically."},"notes":{"w":{"id":"Esai, opini, dll.","en":"Essays, opinion pieces, etc."},"r":{"id":"Redaksional dan advertorial. ","en":"Editorial and advertorial. Journalistic video."}}}</script><script id="app">
+var DATA=JSON.parse(document.getElementById("data").textContent);
+var SHELL=document.getElementById("shell").outerHTML;
+var FONT="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;800&display=swap";
+var D={
+ id:{role:"Jurnalistik & HI",n1:"Perkenalan",n2:"Garis Besar Project",n3:"Karya Tulis",n4:"Hasil Liputan",p_note:"Gambaran singkat project yang pernah dan sedang dikerjakan",w_note:"Esai, opini, dan feature pilihan",r_note:"Reportase dan liputan lapangan pilihan",w_count:"karya tulis yang telah dihasilkan",r_count:"hasil liputan yang telah dihasilkan",open:"Buka tautan ↗",n5:"Overview",o_note:"Garis besar portofolio ini",c_cnt_r:"Jumlah Liputan",c_cat:"Kategori",c_n:"Jumlah",adv:"Advertorial",red:"Redaksional",tot:"Total",c_plat:"Platform",c_link:"Link",c_cnt:"Jumlah Tulisan",c_note:"Keterangan"},
+ en:{role:"Journalism & IR",n1:"Introduction",n2:"Project Overview",n3:"Written Works",n4:"Reporting",p_note:"A brief look at projects past and present",w_note:"Selected essays, opinion pieces and features",r_note:"Selected reportage and field reporting",w_count:"written works produced",r_count:"reports produced",open:"Open link ↗",n5:"Overview",o_note:"The portfolio at a glance",c_cnt_r:"Number of reports",c_cat:"Category",c_n:"Count",adv:"Advertorial",red:"Editorial",tot:"Total",c_plat:"Platform",c_link:"Link",c_cnt:"Number of pieces",c_note:"Notes"}
+};
+var lang="id";
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function slides(id,items,withPlat){
+ var h="",d=D[lang];
+ items.forEach(function(it){h+='<article class="slide"><span class="tag small">'+esc(it.category)+'</span><h3>'+esc(it.title)+'</h3>'+(withPlat?'<div class="plat small">'+esc(it.platform)+'</div>':'')+'<a class="small" href="'+esc(it.link)+'" target="_blank" rel="noopener">'+d.open+'</a></article>'});
+ document.getElementById(id).innerHTML=h;
+}
+function fixUrl(u){u=String(u||"").trim();if(!u||u==="#")return "#";if(/^(https?:|mailto:|tel:)/i.test(u))return u.replace(/(wa\.me\/)\+/i,"$1");if(/^[^\s\/@]+@[^\s\/@]+\.[^\s\/@]+$/.test(u))return "mailto:"+u;return "https://"+u.replace(/^\/+/,"").replace(/(wa\.me\/)\+/i,"$1")}
+function lk(c){var a=c.links&&c.links.length?c.links:(c.link?[{url:c.link}]:[]),b=D[lang].open.replace(" ↗","");return a.map(function(x,i){return '<a class="small" href="'+esc(fixUrl(x.url))+'" target="_blank" rel="noopener">'+esc(x.label||(a.length>1?b+" "+(i+1):b))+' ↗</a>'}).join("")}
+function T(k){return (k==="w_note"||k==="r_note")&&DATA.notes&&DATA.notes[k[0]]&&DATA.notes[k[0]][lang]?DATA.notes[k[0]][lang]:D[lang][k]}
+function catsR(id,c){var d=D[lang];c=c||{};var a=parseInt(c.adv,10),r=parseInt(c.red,10),t=parseInt(DATA.counts.r,10);
+ if(isNaN(r)&&!isNaN(a)&&!isNaN(t))r=t-a;
+ var tot=(!isNaN(a)&&!isNaN(r))?a+r:t,v=function(x){return isNaN(x)?"–":x};
+ var row=function(p,k,n){return '<div class="crow c3"><b>'+esc(p)+'</b><span class="small">'+esc(k)+'</span><span class="cn">'+esc(n)+'</span></div>'};
+ document.getElementById(id).innerHTML='<div class="crow chead c3"><span>'+d.c_plat+'</span><span>'+d.c_cat+'</span><span>'+d.c_n+'</span></div>'+row(c.platform,d.adv,v(a))+row("",d.red,v(r))+row("",d.tot,v(tot))}
+function cats(id,arr,ck){var d=D[lang],h='<div class="crow chead"><span>'+d.c_plat+'</span><span>'+d.c_link+'</span><span>'+d[ck||"c_cnt"]+'</span><span>'+d.c_note+'</span></div>';arr.forEach(function(c){h+='<div class="crow"><b>'+esc(c.platform)+'</b><span class="lk">'+lk(c)+'</span><span class="cn">'+esc(c.count)+'</span><span class="small">'+esc(c.note)+'</span></div>'});document.getElementById(id).innerHTML=h}
+function links(id,arr){document.getElementById(id).innerHTML=arr.map(function(c){var u=fixUrl(c.url),ml=/^mailto:/i.test(u),ext=/^https?:/.test(u)||ml;return '<li><a href="'+esc(u)+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+esc(c.label)+'</a></li>'}).join("")}
+function render(){
+ var d=D[lang];
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i18n]").forEach(function(e){var k=e.dataset.i18n;e.textContent=k==="bio"?DATA.bio[lang]:T(k)});
+ document.getElementById("n-w").textContent=DATA.counts.w;
+ document.getElementById("n-r").textContent=DATA.counts.r;
+ cats("cats-w",DATA.wcats||[]);catsR("cats-r",DATA.rcats);
+ document.getElementById("ovtext").textContent=(DATA.overview||{})[lang]||"";
+ document.getElementById("ovlist").innerHTML=[["#tulis","n3","w_note",DATA.counts.w],["#liputan","n4","r_note",DATA.counts.r]].map(function(r,i){return '<a class="item" href="'+r[0]+'"><b class="big">('+(i+3)+') '+esc(d[r[1]])+'</b><span class="small">'+esc(T(r[2]))+' — '+esc(r[3])+'</span></a>'}).join("");
+ slides("c-r",DATA.reports,false);
+ var h=Math.ceil(DATA.contacts.length/2);links("ct1",DATA.contacts.slice(0,h));links("ct2",DATA.contacts.slice(h));
+ document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.lang===lang)});
+}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){lang=b.dataset.lang;render()})});
+document.querySelectorAll(".ctrl button").forEach(function(b){b.addEventListener("click",function(){document.getElementById(b.dataset.c).scrollBy({left:b.dataset.d*340,behavior:"smooth"})})});
+render();
+
+// ===== Mode edit (hanya untuk pemilik) =====
+function build(data){
+ var j=JSON.stringify(data).replace(/</g,"\\u003c");
+ return '<!DOCTYPE html>\n<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Dzaky — Portofolio</title><link href="'+FONT+'" rel="stylesheet"><style id="css">'+document.getElementById("css").textContent+'</style></head><body>'+SHELL+'<script type="application/json" id="data">'+j+'<\/script><script id="app">'+document.getElementById("app").textContent+'<\/script></body></html>';
+}
+(async function(){
+ try{
+ if(!window.claude||!claude.use)return;
+ var user=await claude.use("user"),art=await claude.use("artifact");
+ if(!user||!art)return;
+ if(!((await user.isOwner())||(await user.canEdit())))return;
+ var draft,panel,body,status;
+ var btn=document.createElement("button");btn.id="ed-open";btn.textContent="✎ Edit";btn.onclick=openEd;document.body.appendChild(btn);
+ function el(t,txt){var e=document.createElement(t);if(txt)e.textContent=txt;return e}
+ function field(o,k,ph,area){var e=el(area?"textarea":"input");if(area)e.rows=4;e.value=o[k]||"";e.placeholder=ph;e.oninput=function(){o[k]=e.value};return e}
+ function sec(t){var s=el("div");s.appendChild(el("h4",t));body.appendChild(s);return s}
+ function list(t,arr,fs,blank){
+  var s=sec(t),box=el("div");s.appendChild(box);
+  function draw(){box.innerHTML="";arr.forEach(function(it,i){var r=el("div");r.className="ed-row";fs.forEach(function(f){r.appendChild(field(it,f[0],f[1]))});var x=el("button","✕");x.setAttribute("aria-label","Hapus");x.onclick=function(){arr.splice(i,1);draw()};r.appendChild(x);box.appendChild(r)})}
+  draw();var a=el("button","+ Tambah");a.onclick=function(){arr.push(Object.assign({},blank));draw()};s.appendChild(a);
+ }
+ function catEd(t,arr){
+  var s=sec(t),box=el("div");s.appendChild(box);
+  function draw(){box.innerHTML="";arr.forEach(function(c,i){
+   c.links=c.links||[];
+   var blk=el("div");blk.style.cssText="border:1px solid #111;padding:10px;margin-bottom:10px";
+   var r=el("div");r.className="ed-row";r.appendChild(field(c,"platform","Platform"));r.appendChild(field(c,"count","Jumlah tulisan"));r.appendChild(field(c,"note","Keterangan"));
+   var x=el("button","✕ Hapus kategori");x.style.width="auto";x.onclick=function(){arr.splice(i,1);draw()};r.appendChild(x);blk.appendChild(r);
+   var lb=el("div");blk.appendChild(lb);
+   function dl(){lb.innerHTML="";c.links.forEach(function(l,j){var rr=el("div");rr.className="ed-row";rr.appendChild(field(l,"label","Judul / label tulisan"));rr.appendChild(field(l,"url","Link https://"));var y=el("button","✕");y.onclick=function(){c.links.splice(j,1);dl()};rr.appendChild(y);lb.appendChild(rr)})}
+   dl();var al=el("button","+ Tambah link");al.onclick=function(){c.links.push({label:"",url:"https://"});dl()};blk.appendChild(al);
+   box.appendChild(blk)})}
+  draw();var a=el("button","+ Tambah kategori / platform");a.onclick=function(){arr.push({platform:"",count:"",note:"",links:[{label:"",url:"https://"}]});draw()};s.appendChild(a)
+ }
+ function openEd(){
+  draft=JSON.parse(JSON.stringify(DATA));
+  panel=el("div");panel.id="ed";panel.appendChild(el("h3","Edit portofolio"));body=el("div");panel.appendChild(body);
+  var s=sec("Angka besar: JUMLAH KARYA TULIS (bagian 3)");s.appendChild(field(draft.counts,"w","Jumlah karya tulis"));s=sec("Angka besar: JUMLAH HASIL LIPUTAN (bagian 4)");s.appendChild(field(draft.counts,"r","Jumlah hasil liputan"));
+  draft.notes=draft.notes||{w:{id:"",en:""},r:{id:"",en:""}};
+  s=sec("Keterangan di samping judul KARYA TULIS");s.appendChild(field(draft.notes.w,"id","Keterangan (ID)"));s.appendChild(field(draft.notes.w,"en","Keterangan (EN)"));
+  s=sec("Keterangan di samping judul HASIL LIPUTAN");s.appendChild(field(draft.notes.r,"id","Keterangan (ID)"));s.appendChild(field(draft.notes.r,"en","Keterangan (EN)"));
+  s=sec("Bio (ID)");s.appendChild(field(draft.bio,"id","Bio",true));
+  s=sec("Bio (EN)");s.appendChild(field(draft.bio,"en","Bio",true));
+  draft.overview=draft.overview||{id:"",en:""};s=sec("(2) Overview (ID)");s.appendChild(field(draft.overview,"id","Overview",true));s=sec("(2) Overview (EN)");s.appendChild(field(draft.overview,"en","Overview",true));
+  catEd("(3) Karya tulis: kategori & link",draft.wcats);
+  (function(){var c=draft.rcats;if(!c||Array.isArray(c))c=draft.rcats={platform:"Instagram",adv:"",red:""};var s2=sec("(4) Hasil liputan: pembagian advertorial / redaksional");var info=el("p");function u(){var a=parseInt(c.adv,10),r=parseInt(c.red,10),t=parseInt(draft.counts.r,10);info.textContent=(isNaN(a)||isNaN(r))?"Isi kedua jumlah. Kalau redaksional dikosongkan, dihitung otomatis dari total liputan ("+(draft.counts.r||"belum diisi")+") dikurangi advertorial.":"Advertorial "+a+" + Redaksional "+r+" = "+(a+r)+(isNaN(t)?"":(a+r===t?" (sesuai angka besar liputan)":" (angka besar liputan: "+t+", belum sama)"))}s2.appendChild(field(c,"platform","Platform"));var ia=field(c,"adv","Jumlah advertorial"),ir=field(c,"red","Jumlah redaksional");ia.addEventListener("input",u);ir.addEventListener("input",u);s2.appendChild(ia);s2.appendChild(ir);s2.appendChild(info);u()})();
+  list("(4) Hasil liputan",draft.reports,[["title","Judul"],["category","Kategori"],["link","Tautan https://"]],{title:"",category:"",link:"https://"});
+  list("Kontak / Contact",draft.contacts,[["label","Label"],["url","Tautan / mailto:"]],{label:"",url:"https://"});
+  var bar=el("div");bar.className="ed-bar";var sv=el("button","Simpan"),cn=el("button","Batal");status=el("span");bar.appendChild(sv);bar.appendChild(cn);bar.appendChild(status);panel.appendChild(bar);
+  cn.onclick=function(){panel.remove()};
+  sv.onclick=function(){
+   status.textContent="Menyimpan…";sv.disabled=true;
+   art.publish(build(draft)).catch(function(e){
+    sv.disabled=false;var c=e&&e.code;
+    status.textContent=c==="conflict"?"Ada versi lebih baru, memuat ulang…":(c==="not_writer"||c==="not_granted")?"Kamu tidak punya izin menyimpan di halaman ini.":c==="capability_disabled"?"Simpan tidak tersedia di tampilan ini.":"Gagal menyimpan ("+(c||"error")+"). Coba lagi.";
+   });
+  };
+  document.body.appendChild(panel);
+ }
+ }catch(e){}
+})();
+</script></body></html>
